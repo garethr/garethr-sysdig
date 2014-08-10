@@ -10,10 +10,5 @@
   "dependencies": [
     {"name": "puppetlabs-apt"},
     {"name": "puppetlabs-stdlib"},
-  ],
-  "types": [
-
-  ],
-  "checksums": {
-  }
+  ]
 }
