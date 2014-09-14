@@ -1,5 +1,5 @@
 name          'garethr-sysdig'
-version       '0.1.1'
+version       '0.1.2'
 source        'git://github.com/garethr/garethr-sysdig.git'
 author        'Gareth Rushgrove'
 license       'Apache 2.0'
@@ -9,3 +9,4 @@ project_page  'https://github.com/garethr/garethr-sysdig'
 
 dependency 'puppetlabs/stdlib'
 dependency 'puppetlabs/apt'
+dependency 'stahnma/epel'

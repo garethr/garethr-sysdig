@@ -16,11 +16,13 @@ describe 'sysdig' do
 
     if osfamily == 'RedHat'
       let(:facts) {{
-        :osfamily => osfamily,
+        :osfamily      => osfamily,
+        :kernelrelease => '3.10.0-123.el7.x86_64',
       }}
 
       context 'on Redhat' do
         describe 'should install required repo' do
+          it { should contain_yumrepo('epel') }
           it { should contain_yumrepo('sysdig') }
         end
       end
@@ -32,6 +34,7 @@ describe 'sysdig' do
       it { should contain_class('sysdig::params') }
       it { should contain_class('sysdig::install') }
 
+      it { should contain_package('kernel-devel-3.10.0-123.el7.x86_64') }
       it { should contain_package('sysdig').with_ensure('installed') }
     end
 
