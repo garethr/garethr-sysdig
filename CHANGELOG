@@ -1,2 +1,6 @@
 2014-08-10 Release 0.1.0
 - Initial working release
+2014-09-14 Release 0.1.1
+- Fix metadata.json syntax
+2014-09-14 Release 0.1.2
+- Fix RHEL and CentOS support
