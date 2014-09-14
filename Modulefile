@@ -1,5 +1,5 @@
 name          'garethr-sysdig'
-version       '0.1.0'
+version       '0.1.1'
 source        'git://github.com/garethr/garethr-sysdig.git'
 author        'Gareth Rushgrove'
 license       'Apache 2.0'

@@ -1,6 +1,6 @@
 {
   "name": "garethr-sysdig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source": "git://github.com/garethr/garethr-sysdig.git",
   "author": "Gareth Rushgrove",
   "license": "Apache 2.0",
@@ -8,7 +8,7 @@
   "description": "Install sysdig from the official repositories",
   "project_page": "https://github.com/garethr/garethr-sysdig",
   "dependencies": [
-    {"name": "puppetlabs-apt"},
-    {"name": "puppetlabs-stdlib"}
+    {"name": "puppetlabs/apt"},
+    {"name": "puppetlabs/stdlib"}
   ]
 }
