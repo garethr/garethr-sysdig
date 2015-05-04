@@ -11,7 +11,7 @@ class sysdig::install {
         release           => 'stable-$(ARCH)/',
         repos             => '',
         required_packages => 'debian-keyring debian-archive-keyring',
-        key               => 'EC51E8C4',
+        key               => 'D27A72F32D867DF9300A241574490FD6EC51E8C4',
         key_source        => 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public',
         include_src       => false,
       }
