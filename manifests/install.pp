@@ -1,6 +1,6 @@
 # == Class sysdig::install
 #
-class sysdig::install {
+class sysdig::install ($manage_epel) {
 
   case $::osfamily {
     'Debian': {
@@ -24,7 +24,9 @@ class sysdig::install {
       ]
     }
     'RedHat': {
-      include 'epel'
+      if $manage_epel {
+        include 'epel'
+      }
       yumrepo { 'sysdig':
         baseurl  => 'http://download.draios.com/stable/rpm/$basearch',
         descr    => 'Sysdig repository by Draios',
