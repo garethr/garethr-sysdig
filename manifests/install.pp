@@ -1,11 +1,11 @@
 # == Class sysdig::install
 #
-class sysdig::install {
+class sysdig::install ($manage_epel) {
 
   case $::osfamily {
     'Debian': {
 
-      include apt
+      include ::apt
       apt::source { 'sysdig':
         location          => 'http://download.draios.com/stable/deb',
         release           => 'stable-$(ARCH)/',
@@ -24,7 +24,12 @@ class sysdig::install {
       ]
     }
     'RedHat': {
-      include 'epel'
+      if $manage_epel {
+        include '::epel'
+        $dependencies = [ Yumrepo['sysdig'], Class['epel'] ]
+      } else {
+        $dependencies = [Yumrepo['sysdig'] ]
+      }
       yumrepo { 'sysdig':
         baseurl  => 'http://download.draios.com/stable/rpm/$basearch',
         descr    => 'Sysdig repository by Draios',
@@ -33,8 +38,6 @@ class sysdig::install {
       }
 
       ensure_packages(["kernel-devel-${::kernelrelease}"])
-
-      $dependencies = [ Yumrepo['sysdig'], Class['epel'] ]
     }
     default: {
       $dependencies = []
