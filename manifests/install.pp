@@ -7,12 +7,7 @@ class sysdig::install {
 
       include apt
 
-      package { 'debian-keyring':
-        ensure => 'installed',
-      }
-      package { 'debian-archive-keyring':
-        ensure => 'installed',
-      }
+      ensure_packages(['debian-keyring', 'debian-archive-keyring'])
 
       apt::source { 'sysdig':
         location => 'http://download.draios.com/stable/deb',
