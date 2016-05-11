@@ -18,13 +18,13 @@ class sysdig::install {
           source => 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public',
         },
         include  => {
-          src    => false,
+          src => false,
         },
         require  => Package[
           'debian-keyring',
           'debian-archive-keyring'
         ],
-        before => Package['sysdig'],
+        before   => Package['sysdig'],
       }
 
       ensure_packages(["linux-headers-${::kernelrelease}"])
