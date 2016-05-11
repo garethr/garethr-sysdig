@@ -24,6 +24,7 @@ class sysdig::install {
           'debian-keyring',
           'debian-archive-keyring'
         ],
+        before => Package['sysdig'],
       }
 
       ensure_packages(["linux-headers-${::kernelrelease}"])
