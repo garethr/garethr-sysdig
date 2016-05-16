@@ -29,7 +29,8 @@ class sysdig::install {
         baseurl  => 'http://download.draios.com/stable/rpm/$basearch',
         descr    => 'Sysdig repository by Draios',
         enabled  => 1,
-        gpgcheck => 0,
+        gpgcheck => 1,
+        gpgkey   => 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public',
       }
 
       ensure_packages(["kernel-devel-${::kernelrelease}"])
